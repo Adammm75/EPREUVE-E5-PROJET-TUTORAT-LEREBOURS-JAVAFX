@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="936.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.projet.Admin_Controller">
+   <top>
+      <AnchorPane prefHeight="110.0" prefWidth="750.0" style="-fx-background-color: orange;" stylesheets="@../../CSS/Projet.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="342.0" layoutY="31.0" text="Espace Admin">
+               <font>
+                  <Font name="Forte" size="42.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="87.0" fitWidth="131.0" layoutX="696.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/administrateur.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="127.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/lerebours.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="414.0" prefWidth="301.0" style="-fx-background-color: orange;" stylesheets="@../../CSS/Projet.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="BtnMatieres" alignment="CENTER" contentDisplay="RIGHT" layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#BtnMatieresClicked" prefHeight="50.0" prefWidth="285.0" style="-fx-background-color: #3b3838;" styleClass="btnMenu" stylesheets="@../../CSS/Projet.css" text="Matières" textFill="WHITE">
+               <font>
+                  <Font name="Forte" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="BtnSalles" layoutX="8.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#BtnSallesClicked" prefHeight="50.0" prefWidth="285.0" style="-fx-background-color: #3b3838;" styleClass="btnMenu" stylesheets="@../../CSS/Projet.css" text="Salles" textFill="WHITE">
+               <font>
+                  <Font name="Forte" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSoutiens" layoutX="11.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#BtnSoutiensClicked" prefHeight="50.0" prefWidth="285.0" style="-fx-background-color: #3b3838;" styleClass="btnMenu" stylesheets="@../../CSS/Projet.css" text="Gestions Soutiens" textFill="WHITE">
+               <font>
+                  <Font name="Forte" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="BtnStatistiques" layoutX="11.0" layoutY="317.0" mnemonicParsing="false" onMouseClicked="#BtnStatistiquesClicked" prefHeight="50.0" prefWidth="285.0" style="-fx-background-color: #3b3838;" styleClass="btnMenu" stylesheets="@../../CSS/Projet.css" text="Diverses Statistiques " textFill="WHITE">
+               <font>
+                  <Font name="Forte" size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="490.0" prefWidth="642.0" stylesheets="@../../CSS/Projet.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="apMatiere" prefHeight="443.0" prefWidth="642.0" styleClass="apExemple" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="BtnCreerMatiere" layoutX="109.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#BtnAccCreerMatiereClicked" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: #3b3838;" styleClass="couleurEtudiant" text="Créer" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.7263157963752747" green="0.6778947114944458" blue="0.6778947114944458" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <AnchorPane fx:id="apCreerMatiere" layoutY="157.0" prefHeight="289.0" prefWidth="642.0" style="-fx-background-color: lightgrey;" styleClass="apExemple">
+                     <children>
+                        <Label layoutX="86.0" layoutY="27.0" text="Création d'une matière">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="BtnCréationDemandes" layoutX="540.0" layoutY="244.0" mnemonicParsing="false" onMouseClicked="#BtnCreationMatiereClicked" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #3b3838;" styleClass="couleurEtudiant" stylesheets="@../../CSS/Projet.css" text="Créer" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="60.0" fitWidth="51.0" layoutX="14.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/process.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="174.0" layoutY="94.0" text="Nom de la matère :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="191.0" layoutY="164.0" text="Sous matiere :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCreerNomMatiere" layoutX="332.0" layoutY="91.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtCreerSousMatiere" layoutX="332.0" layoutY="158.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="303.0" layoutY="203.0" prefHeight="19.0" prefWidth="266.0" text="Sous la forme : sousMat1#sousMat2#sousMat3" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="apModifierMatiere" layoutY="157.0" prefHeight="289.0" prefWidth="642.0" style="-fx-background-color: lightgrey;" styleClass="apExemple">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/edit-file.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="tvModifMatiere" layoutX="16.0" layoutY="97.0" onMouseClicked="#BtnAffichageDemandeModifierClicked" prefHeight="160.0" prefWidth="311.0">
+                           <columns>
+                              <TableColumn fx:id="tcModifIdMatiere" maxWidth="1127.9998016357422" minWidth="30.0" prefWidth="38.39996528625488" text="id" />
+                              <TableColumn fx:id="tcModifNomMatière" maxWidth="1288.00048828125" minWidth="30.0" prefWidth="99.99999237060547" text="Matière" />
+                              <TableColumn fx:id="tcModifSousMatiere" maxWidth="1024.000244140625" minWidth="30.0" prefWidth="169.5999755859375" text="Sous matière" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="BtnModifMatiere" layoutX="524.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#BtnModifMatiereClicked" prefHeight="31.0" prefWidth="86.0" style="-fx-background-color: #3b3838;" stylesheets="@../../CSS/Projet.css" text="Modifier" textFill="WHITE" />
+                        <Label layoutX="90.0" layoutY="24.0" text="Modification d'une matière">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="348.0" layoutY="189.0" prefHeight="19.0" prefWidth="266.0" text="Sous la forme : sousMat1#sousMat2#sousMat3" />
+                        <TextField fx:id="txtModifNomMatiere" layoutX="383.0" layoutY="81.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="408.0" layoutY="54.0" text="Nom de la matère :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtModifSousMatiere" layoutX="383.0" layoutY="158.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="426.0" layoutY="132.0" text="Sous matiere :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="apVisualiserMatiere" layoutY="157.0" prefHeight="289.0" prefWidth="642.0" style="-fx-background-color: lightgrey;" styleClass="apExemple">
+                     <children>
+                        <TableView fx:id="tvVisualiserMatiere" layoutX="93.0" layoutY="72.0" prefHeight="195.0" prefWidth="456.0">
+                           <columns>
+                              <TableColumn fx:id="tcIdMatiere" maxWidth="1287.9998016357422" minWidth="30.0" prefWidth="52.80004119873047" text="ID" />
+                              <TableColumn fx:id="tcNomMatiere" maxWidth="1512.0001220703125" minWidth="30.0" prefWidth="128.0" text="Matière" />
+                              <TableColumn fx:id="tcSousMatiere" maxWidth="1824.0005493164062" minWidth="30.0" prefWidth="270.3999938964844" text="Sous matières" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="209.0" layoutY="20.0" text="Visualisation des matières">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="55.0" fitWidth="83.0" layoutX="441.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/logooeil-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="BtnModifierMatiere" layoutX="278.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#BtnAccModifierMatiereClicked" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: #3b3838;" styleClass="couleurEtudiant" text="Modifier" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.7263157963752747" green="0.6778947114944458" blue="0.6778947114944458" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Button fx:id="BtnVisualiserMatiere" layoutX="447.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#BtnAccVisualiserMatiereClicked" prefHeight="40.0" prefWidth="112.0" style="-fx-background-color: #3b3838;" styleClass="couleurEtudiant" text="Visualiser" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.7263157963752747" green="0.6778947114944458" blue="0.6778947114944458" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Label layoutX="278.0" layoutY="14.0" prefHeight="43.0" prefWidth="120.0" text="Matière" textFill="#3b3838">
+                     <font>
+                        <Font name="Forte" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apSalles" prefHeight="443.0" prefWidth="634.0" styleClass="apExemple" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="BtnCreerSalle" layoutX="136.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#BtnAccCreerSalleClicked" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: #3b3838;" styleClass="couleurEtudiant" text="Créer" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.7263157963752747" green="0.6778947114944458" blue="0.6778947114944458" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <AnchorPane fx:id="apCreerSalle" layoutY="157.0" prefHeight="289.0" prefWidth="642.0" style="-fx-background-color: lightgrey;" styleClass="apExemple">
+                     <children>
+                        <Button fx:id="BtnCréationSalle" layoutX="509.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#BtnCreationSalleClicked" prefHeight="32.0" prefWidth="74.0" style="-fx-background-color: #3b3838;" styleClass="couleurEtudiant" stylesheets="@../../CSS/Projet.css" text="Créer " textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="85.0" layoutY="116.0" text="Etage">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="73.0" layoutY="19.0" text="Création Salle">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="48.0" fitWidth="43.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/process.png" />
+                           </image>
+                        </ImageView>
+                        <ComboBox fx:id="cboEtage" layoutX="43.0" layoutY="147.0" onAction="#btnCreationSalleEtageClicked" prefHeight="26.0" prefWidth="116.0" visibleRowCount="3" />
+                        <Label layoutX="255.0" layoutY="116.0" text="Numero de la salle :">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumCreationSalle" layoutX="247.0" layoutY="144.0" />
+                        <Label layoutX="255.0" layoutY="176.0" text="Sous la forme :  Salle 101" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="apModifierSalle" layoutY="157.0" prefHeight="289.0" prefWidth="642.0" style="-fx-background-color: lightgrey;" styleClass="apExemple">
+                     <children>
+                        <ImageView fitHeight="51.0" fitWidth="54.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/edit-file.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="tvModifSalle" layoutX="14.0" layoutY="96.0" prefHeight="160.0" prefWidth="349.0">
+                           <columns>
+                              <TableColumn fx:id="tcIdModifSalle" maxWidth="575.9997749328613" minWidth="30.0" prefWidth="54.40002632141113" text="id" />
+                              <TableColumn fx:id="tcEtageModifSalle" maxWidth="3167.999801635742" minWidth="30.0" prefWidth="100.79998016357422" text="Etage" />
+                              <TableColumn fx:id="tcNumSalleModifSalle" maxWidth="3167.999801635742" minWidth="30.0" prefWidth="192.0" text="Numero Salle" />
+                           </columns>
+                        </TableView>
+                        <ComboBox fx:id="cboModifEtage" layoutX="445.0" layoutY="96.0" onAction="#BtnMatieresModifierCompetencesClicked" prefWidth="150.0" />
+                        <Button fx:id="BtnModificationSalle" layoutX="548.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#BtnModificationSalleClicked" prefHeight="32.0" prefWidth="74.0" style="-fx-background-color: #3b3838;" text="Modifier" textFill="WHITE" />
+                        <Label layoutX="84.0" layoutY="30.0" text="Modification Salle">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="490.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etage :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="440.0" layoutY="141.0" text="Numero de la salle :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumModifSalle" layoutX="445.0" layoutY="172.0" />
+                        <Label layoutX="453.0" layoutY="197.0" text="Sous la forme :  Salle 101" />
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="BtnModifierSalle" layoutX="420.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#BtnAccModifierSalleClicked" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: #3b3838;" styleClass="couleurEtudiant" text="Modifier" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.7263157963752747" green="0.6778947114944458" blue="0.6778947114944458" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Label layoutX="289.0" layoutY="25.0" text="Salle">
+                     <font>
+                        <Font name="Forte" size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apSoutien" prefHeight="441.0" prefWidth="642.0" styleClass="apExemple" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="33.0" text="Gestions Soutiens">
+                     <font>
+                        <Font name="Forte" size="25.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tvSoutiens" layoutX="21.0" layoutY="110.0" prefHeight="252.0" prefWidth="622.0">
+                     <columns>
+                        <TableColumn fx:id="tcIdSoutien" maxWidth="1120.0015258789062" minWidth="30.0" prefWidth="32.799989223480225" text="Id" />
+                        <TableColumn fx:id="tcNomEtudiant" maxWidth="1120.0015258789062" minWidth="30.0" prefWidth="99.20000457763672" text="idDemande" />
+                        <TableColumn fx:id="tcNomTuteur" maxWidth="1120.0015258789062" minWidth="30.0" prefWidth="103.99993896484375" text="idCompetence" />
+                        <TableColumn fx:id="tcSalle" maxWidth="1120.0015258789062" minWidth="30.0" prefWidth="57.60003662109375" text="Salle" />
+                        <TableColumn fx:id="tcDateFinDeDemande" maxWidth="1120.0015258789062" minWidth="30.0" prefWidth="80.800048828125" text="DateSoutien" />
+                        <TableColumn fx:id="tcDateUpdated" maxWidth="1120.0015258789062" minWidth="7.2000732421875" prefWidth="92.0" text="Dateupdated" />
+                        <TableColumn fx:id="tcDescription" maxWidth="1120.0015258789062" minWidth="0.0" prefWidth="88.00003051757812" text="Description" />
+                        <TableColumn fx:id="tcStatus" maxWidth="1120.0015258789062" minWidth="7.2000732421875" prefWidth="66.400146484375" text="Status" />
+                     </columns>
+                  </TableView>
+                  <ImageView fitHeight="61.0" fitWidth="61.0" layoutX="281.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/logooeil-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnAffectationSalle" layoutX="342.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#btnAffectationSalleClicked" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #3b3838;" text="Affecter Salle" textFill="WHITE">
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color red="0.34736841917037964" green="0.34736841917037964" blue="0.34736841917037964" />
+                           </color>
+                        </InnerShadow>
+                     </effect></Button>
+                  <ComboBox fx:id="cmbBoxSalle" layoutX="79.0" layoutY="381.0" prefWidth="150.0" promptText="Affectation Salle" />
+                  <Label layoutX="399.0" layoutY="24.0" style="-fx-background-: orange;" text="Status Soutien " textFill="#ff8c00">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="399.0" layoutY="69.0" text="2 : Soutien Validé">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="399.0" layoutY="48.0" text="1 : en attente de validation">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apStastistiques" prefHeight="443.0" prefWidth="634.0" styleClass="apExemple" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane fx:id="apGraph1" layoutX="128.0" layoutY="68.0" prefHeight="371.0" prefWidth="478.0" styleClass="apExemple">
+                     <children>
+                        <PieChart fx:id="graph1" layoutY="27.0" prefHeight="328.0" prefWidth="478.0" />
+                        <Label layoutX="75.0" layoutY="15.0" prefHeight="33.0" prefWidth="369.0" text="Nombres de Compétences par Etudiant">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="97.0" layoutY="20.0" text="Statistiques">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="57.0" fitWidth="51.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/vector-statistics-icon-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Btngraph3" layoutX="20.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#BtnStatistiquesClicked" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #3b3838;" styleClass="couleurEtudiantClair" text="Graphique 1" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.4421052634716034" green="0.4421052634716034" blue="0.4421052634716034" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Button fx:id="Btngraph4" layoutX="21.0" layoutY="312.0" mnemonicParsing="false" onMouseClicked="#BtnStatistiquesClicked" prefHeight="26.0" prefWidth="89.0" style="-fx-background-color: #3b3838;" styleClass="couleurEtudiantClair" text="Graphique 2" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.5157894492149353" green="0.5157894492149353" blue="0.5157894492149353" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <AnchorPane fx:id="apGraph5" layoutX="147.0" layoutY="68.0" prefHeight="357.0" prefWidth="478.0" styleClass="apExemple">
+                     <children>
+                        <PieChart fx:id="graph1" layoutY="46.0" prefHeight="312.0" prefWidth="474.0" />
+                        <Label layoutX="75.0" layoutY="15.0" text="Nombres de Demandes par Matière">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="apGraph6" layoutX="157.0" layoutY="78.0" prefHeight="357.0" prefWidth="478.0" styleClass="apExemple">
+                     <children>
+                        <Label layoutX="75.0" layoutY="15.0" text="Nombres de Compétences par Matière">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <PieChart fx:id="graph2" layoutY="46.0" prefHeight="312.0" prefWidth="474.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

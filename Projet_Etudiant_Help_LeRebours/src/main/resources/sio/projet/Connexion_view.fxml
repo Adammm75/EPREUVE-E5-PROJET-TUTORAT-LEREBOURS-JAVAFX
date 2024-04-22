@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.projet.ConnexionController">
+   <children>
+      <Text layoutX="346.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connectez-vous">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Text>
+      <TextField fx:id="idIdentifiant" layoutX="370.0" layoutY="204.0" promptText="Identifiant" style="-fx-background-color: transparence; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <ImageView fitHeight="26.0" fitWidth="36.0" layoutX="321.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/login.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="315.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/R__2_-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="BtnSeConnecter" layoutX="389.0" layoutY="341.0" mnemonicParsing="false" onMouseClicked="#BtnSeConnecterClicked" style="-fx-background-color: black;" text="Se Connecter" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="29.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="79.0" fitWidth="341.0" layoutX="144.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="306.0" AnchorPane.topAnchor="15.0">
+         <image>
+            <Image url="@../../Images/lerebours.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-9.0" layoutY="112.0" prefHeight="286.0" prefWidth="296.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="73.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/login.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <PasswordField fx:id="idMdp" layoutX="373.0" layoutY="272.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+   </children>
+</AnchorPane>

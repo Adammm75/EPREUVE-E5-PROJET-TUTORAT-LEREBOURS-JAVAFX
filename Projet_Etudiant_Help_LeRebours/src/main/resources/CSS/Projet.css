@@ -1,0 +1,37 @@
+.gris
+{
+    -fx-background-color:  grey;
+}
+
+.grisClair
+{
+    -fx-background-color:  #E5E7E9;
+}
+
+.txt
+{
+    -fx-border-width: 1px; /* Changer l'épaisseur de la bordure */
+    -fx-border-color: #818F9E; /* Changer la couleur de la bordure */
+    -fx-border-radius: 5px; /* Changer le rayon des coins de la bordure */
+}
+
+.couleurEtudiant
+{
+    -fx-background-color:  #73C6B6;
+}
+
+.btnMenu:hover
+{
+    -fx-background-color: #D0ECE7;
+    -fx-background-radius: 10 0 0 10;
+}
+
+.couleurEtudiantClair
+{
+    -fx-background-color: #D0ECE7;
+}
+
+.apExemple
+{
+    -fx-background-color: white;
+}
